@@ -84,7 +84,7 @@ const quiz = {
       b: 'anonymous, transferInto', 
       c: 'transferInto, anonymous' 
     },
-    answer: 'b',
+    answer: 'c',
   },
   q3: {
     question: 'What tooltip appears when hovering over the third debug button?',
@@ -102,7 +102,7 @@ const quiz = {
       b: 'Transferring € 50,00 from Jack to undefined', 
       c: 'Transferring € 50,00 from Jack to Jane' 
     },
-    answer: 'b',
+    answer: 'a',
   },
   q5: {
     question: 'The owner of the wallet with insufficient funds is:',
