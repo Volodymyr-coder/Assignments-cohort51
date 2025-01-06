@@ -1,0 +1,25 @@
+*** Unit Test Error Report ***
+
+ PASS  .dist/2-Browsers/Week1/unit-tests/ex4-whatsTheTime.test.js (7.654 s)
+  br-wk1-ex4-whatsTheTime
+    ✅ HTML should be syntactically valid (181 ms)
+    ✅ should have all TODO comments removed (1 ms)
+    ✅ should use `setInterval()`
+    ✅ should not call `setInterval()` more than once (2003 ms)
+    ✅ should use `window.onload` or `window.addEventListener()` for the `load` or `DOMContentLoaded` event (1 ms)
+    ✅ `window.onload` or `window.addEventListener` should not call its event handler function (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        8.408 s
+Ran all test suites matching /C:\\Users\\vlady\\Desktop\\HYF\\Assignments-cohort51\\.dist\\2-Browsers\\Week1\\unit-tests\\ex4-whatsTheTime.test.js/i.
+No linting errors detected.
+
+
+*** Spell Checker Report ***
+
+2-Browsers/Week1/assignment/ex4-whatsTheTime/index.js:15:9 - Unknown word (paragrafh)
+2-Browsers/Week1/assignment/ex4-whatsTheTime/index.js:16:24 - Unknown word (paragrafh)
+2-Browsers/Week1/assignment/ex4-whatsTheTime/index.js:23:5 - Unknown word (paragrafh)
+2-Browsers/Week1/assignment/ex4-whatsTheTime/index.js:23:47 - Unknown word (minut)

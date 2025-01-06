@@ -1,1 +1,40 @@
 /* Write your style here */
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookList {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  width: 80%;
+  height: 200px;
+  padding: 10px;
+}
+
+.alreadyReadTrue {
+  background-color: lightgreen;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 10px;
+  list-style-type: none;
+  text-align: center
+}
+
+.alreadyReadFalse {
+  background-color: red;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 10px;
+  list-style-type: none;
+  text-align: center
+}
