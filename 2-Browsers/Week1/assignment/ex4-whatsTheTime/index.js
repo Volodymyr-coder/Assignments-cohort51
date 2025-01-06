@@ -20,7 +20,7 @@ function addCurrentTime() {
     const hours = (time.getHours() + '').padStart(2, '0');
     const min = (time.getMinutes() + '').padStart(2, '0');
     const sec = (time.getSeconds() + '').padStart(2, '0');
-    paragraph.textContent = `hours: ${hours}  minut: ${min} second : ${sec}`;
+    paragraph.textContent = `hours: ${hours}  minutesgit: ${min} second : ${sec}`;
   }
 
   setInterval(getCurrentTime, 1000);
