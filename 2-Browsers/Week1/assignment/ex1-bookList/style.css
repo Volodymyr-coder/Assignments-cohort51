@@ -1,40 +1,35 @@
 /* Write your style here */
 .container {
   display: flex;
-  flex-direction: row;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  width: auto;
+  height: 100%;
 }
 
 .bookList {
   display: flex;
   flex-direction: row;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
+  margin: 0px;
+  padding: 0px;
 }
 
 .img {
-  width: 80%;
-  height: 200px;
-  padding: 10px;
+  max-width: 100%;
+
 }
 
 .alreadyReadTrue {
   background-color: lightgreen;
-  width: 250px;
-  border: 1px solid black;
-  border-radius: 10px;
   list-style-type: none;
-  text-align: center
+  margin: 8px;
+  padding: 8px;
+
 }
 
 .alreadyReadFalse {
   background-color: red;
-  width: 250px;
-  border: 1px solid black;
-  border-radius: 10px;
   list-style-type: none;
-  text-align: center
+  margin: 8px;
+  padding: 8px;
 }
