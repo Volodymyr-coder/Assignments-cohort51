@@ -9,3 +9,4 @@
 | ex1-johnWho           |   9    |   -    |   ✕    |
 | ex2-checkDoubleDigits |   11   |   -    |   ✕    |
 | ex3-rollDie           |   7    |   -    |   ✕    |
+| ex4-pokerDiceAll      |   7    |   -    |   ✕    |

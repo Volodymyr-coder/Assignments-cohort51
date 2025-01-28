@@ -27,9 +27,9 @@ exercise file.
 import { rollDie } from '../../helpers/pokerDiceRoller.js';
 
 export function rollDice() {
-  // TODO Refactor this function
   const dice = [1, 2, 3, 4, 5];
-  return rollDie(1);
+
+  return Promise.all(dice.map((die) => rollDie(die)));
 }
 
 function main() {
@@ -43,4 +43,5 @@ if (process.env.NODE_ENV !== 'test') {
   main();
 }
 
-// TODO Replace this comment by your explanation that was asked for in the assignment description.
+// Promise.all() accepts an array of promises, waits for them to be fulfilled, and returns a promise. In our situation we wait when all promise will be done.
+// In the event that at least one of the promises is rejected, the returned promise will enter the rejected state, and its value will be an error.
