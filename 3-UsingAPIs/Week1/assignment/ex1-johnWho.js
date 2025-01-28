@@ -8,21 +8,28 @@ Rewrite this function, but replace the callback syntax with the Promise syntax:
   didn't pass in a first name!"
 ------------------------------------------------------------------------------*/
 // TODO see above
-export const getAnonName = (firstName, callback) => {
-  setTimeout(() => {
-    if (!firstName) {
-      callback(new Error("You didn't pass in a first name!"));
-      return;
-    }
-
-    const fullName = `${firstName} Doe`;
-
-    callback(fullName);
-  }, 1000);
+export const getAnonName = (firstName) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (firstName) {
+        const fullName = `${firstName} Doe`;
+        resolve(fullName);
+        return;
+      } else {
+        reject(new Error("You didn't pass in a first name!"));
+      }
+    }, 1000);
+  });
 };
 
 function main() {
-  getAnonName('John', console.log);
+  getAnonName('John')
+    .then((fullName) => {
+      console.log(fullName);
+    })
+    .catch((error) => {
+      console.error(error.message);
+    });
 }
 
 // ! Do not change or remove the code below
