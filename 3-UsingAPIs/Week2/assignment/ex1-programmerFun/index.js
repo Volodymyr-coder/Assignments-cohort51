@@ -1,3 +1,5 @@
+// const { error } = require('@actions/core');
+
 /*------------------------------------------------------------------------------
 Full description at: https://github.com/HackYourFuture/Assignments/blob/main/3-UsingAPIs/Week2/README.md#exercise-1-programmer-fun
 
@@ -16,29 +18,40 @@ Full description at: https://github.com/HackYourFuture/Assignments/blob/main/3-U
    url with `.shx`. There is no server at the modified url, therefore this 
    should result in a network (DNS) error.
 ------------------------------------------------------------------------------*/
+const container = document.createElement('div');
 function requestData(url) {
-  // TODO return a promise using `fetch()`
+  return fetch(url).then((response) => {
+    if (!response.ok) {
+      throw error(`Error HTTP: ${response.status}`);
+    }
+    return response.json();
+  });
 }
 
+requestData('https://xkcd.now.sh/?comic=latest');
+
 function renderImage(data) {
-  // TODO render the image to the DOM
-  console.log(data);
+  const img = document.createElement('img');
+  img.src = data.img;
+  container.appendChild(img);
+  document.body.appendChild(container);
 }
 
 function renderError(error) {
-  // TODO render the error to the DOM
+  const h1 = document.createElement('h1');
+  h1.textContent = `Error: ${error.message}`;
+  container.appendChild(h1);
+  document.body.appendChild(container);
   console.log(error);
 }
 
-// TODO refactor with async/await and try/catch
-function main() {
-  requestData('https://xkcd.now.sh/?comic=latest')
-    .then((data) => {
-      renderImage(data);
-    })
-    .catch((error) => {
-      renderError(error);
-    });
+async function main() {
+  try {
+    const data = await requestData('https://xkcd.now.sh/?comic=latest');
+    renderImage(data);
+  } catch (error) {
+    renderError(error);
+  }
 }
 
 window.addEventListener('load', main);
