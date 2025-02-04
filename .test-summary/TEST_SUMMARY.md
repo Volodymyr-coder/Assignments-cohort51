@@ -7,3 +7,4 @@
 |     Exercise      | Passed | Failed | ESLint |
 |-------------------|--------|--------|--------|
 | ex1-programmerFun |   5    |   -    |   ✕    |
+| ex2-pokemonApp    |   5    |   -    |   ✕    |

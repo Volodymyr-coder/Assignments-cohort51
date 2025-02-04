@@ -21,18 +21,75 @@ Use async/await and try/catch to handle promises.
 Try and avoid using global variables. As much as possible, try and use function 
 parameters and return values to pass data back and forth.
 ------------------------------------------------------------------------------*/
-function fetchData(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+const container = document.createElement('div');
+const btn = document.createElement('button');
+const selectElem = document.createElement('select');
+const img = document.createElement('img');
+
+btn.textContent = 'Get Pokemon!';
+btn.id = 'GetPokemon';
+btn.classList.add('btn');
+
+selectElem.classList.add('select');
+
+img.classList.add('img');
+
+container.classList.add('container');
+container.appendChild(btn);
+container.appendChild(selectElem);
+container.appendChild(img);
+document.body.appendChild(container);
+
+const BASE_URL = 'https://pokeapi.co/api/v2/pokemon?limit=151';
+
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
 }
 
-function fetchAndPopulatePokemons(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+async function fetchAndPopulatePokemons() {
+  try {
+    const data = await fetchData(BASE_URL);
+    data.results.forEach((pokemon) => {
+      const option = document.createElement('option');
+      option.value = pokemon.url;
+      option.textContent = pokemon.name;
+      selectElem.appendChild(option);
+    });
+  } catch (error) {
+    console.error('Failed to fetch and populate Pokemons:', error);
+  }
 }
 
-function fetchImage(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+async function fetchImage(url) {
+  try {
+    const data = await fetchData(url);
+    img.src = data.sprites.front_default;
+    img.alt = data.name;
+  } catch (error) {
+    console.error('Failed to fetch image:', error);
+  }
 }
 
-function main() {
-  // TODO complete this function
+async function main() {
+  btn.addEventListener('click', async () => {
+    await fetchAndPopulatePokemons();
+  });
+
+  selectElem.addEventListener('change', async (event) => {
+    const selectedUrl = event.target.value;
+    if (selectedUrl) {
+      await fetchImage(selectedUrl);
+    }
+  });
 }
+
+window.addEventListener('load', main);

@@ -28,8 +28,6 @@ function requestData(url) {
   });
 }
 
-requestData('https://xkcd.now.sh/?comic=latest');
-
 function renderImage(data) {
   const img = document.createElement('img');
   img.src = data.img;
@@ -42,7 +40,6 @@ function renderError(error) {
   h1.textContent = `Error: ${error.message}`;
   container.appendChild(h1);
   document.body.appendChild(container);
-  console.log(error);
 }
 
 async function main() {

@@ -1,1 +1,18 @@
 /* add your styling here */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.select {
+  width: 150px;
+}
+
+.img {
+  width: 150px;
+}
